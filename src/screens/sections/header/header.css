@@ -1,0 +1,31 @@
+#header-section {
+    height: 80vh;
+    width: 100%;
+    /* background-color: yellow; */
+}
+
+#header-content-wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#header-content-wrap-1 {
+    text-align: left;
+    align-items: start;
+    height: 100%;
+    width: 40%;
+}
+#header-content-wrap-2 {
+    text-align: left;
+    align-items: start;
+    /* background-color: red; */
+    width: 50%;
+    height: 100%;
+}
+
+#hero-illustration {
+    max-width: 100%;
+    max-height: 100%;
+}

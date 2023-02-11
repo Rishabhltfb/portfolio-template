@@ -1,13 +1,130 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+
+:root {
+    --mobile-width: 600px;
+    --tablet-width: 1024px;
+    --desktop-width: 1300px;
+    --desktop-bttn-text: 1rem;
+    --desktop-body-text-2: 1rem;
+    --desktop-body-text-1: 1.25rem;
+    --desktop-tags-text: 2.4rem;
+    --desktop-dancing-text: 2.5rem;
+    --desktop-hero-header-text: 2.9rem;
+    --desktop-section-header-text: 6rem;
+    --tablet-section-header-size: 4rem;
+    --mobile-section-header-size: 2rem;
+    --primary-green-color: #4c7047; /* Button bg*/
+    --secondary-green-color: rgba(76, 112, 71, 0.4); /* Heading text*/
+    --yellow-color: #ceb661; /* Dancing script text */
+    --heading-text-color: #262626; /* Hero Heading text*/
+    --body-text-color: #333333; /* Body text */
+    --bg-grey-color: #f6f7f9; /* Tag bg  */
+    --tag-text-grey-color: #878a92; /* tag text */
+    --playfair-ff: "Playfair Display";
+    --poppins-ff: "Poppins";
+    --dancing-ff: "Dancing Script";
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 0 6vw;
+    overflow-x: hidden;
+    cursor: none;
+}
+
+.section {
+    padding: 10vh 0;
+}
+
+.hero-heading {
+    font-size: var(--desktop-hero-header-text);
+    font-family: var(--playfair-ff);
+    font-weight: 600;
+    /* line-height: 3rem; */
+    color: var(--heading-text-color);
+}
+
+.heading {
+    font-size: var(--desktop-section-header-text);
+    font-family: var(--playfair-ff);
+    font-weight: 600;
+    /* line-height: 6.5rem; */
+    color: var(--secondary-green-color);
+}
+.dancing-text {
+    font-size: var(--desktop-dancing-text);
+    font-family: var(--dancing-ff);
+    color: var(--yellow-color);
+}
+
+.project-heading {
+    font-size: var(--desktop-body-text-1);
+    font-family: var(--poppins-ff);
+    font-weight: 500;
+    color: var(--body-text-color);
+}
+
+.body-text-1 {
+    font-size: var(--desktop-body-text-1);
+    font-family: var(--poppins-ff);
+    /* line-height: 1.75rem; */
+    color: var(--body-text-color);
+}
+.body-text-2 {
+    font-size: var(--desktop-body-text-2);
+    font-family: var(--poppins-ff);
+    /* line-height: 1.5rem; */
+    color: var(--body-text-color);
+}
+.tag-text {
+    font-size: var(--desktop-tags-text);
+    font-family: var(--poppins-ff);
+    font-weight: 500;
+    /* line-height: 3.7rem; */
+    color: var(--tag-text-grey-color);
+}
+.bttn-text {
+    font-size: var(--desktop-bttn-text);
+    font-family: var(--poppins-ff);
+}
+
+.tag {
+    background: var(--bg-grey-color);
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+}
+.col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.bttn {
+    border: 1px solid var(--primary-green-color);
+    border-radius: 100px;
+    padding: 12px 26px 14px 24px;
+    color: var(--primary-green-color);
+    cursor: pointer;
+}
+
+img {
+    max-height: 100%;
+    max-width: 100%;
 }

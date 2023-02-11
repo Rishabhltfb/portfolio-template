@@ -1,0 +1,71 @@
+.nav-wrapper {
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: yellow; */
+    padding: 0.5rem 0;
+}
+
+nav {
+    width: 40%;
+    /* margin: 0 auto; */
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    /* position: absolute; */
+    /* top: 50%; */
+}
+
+.hover-this {
+    transition: all 0.3s ease;
+}
+.hover-this :hover {
+    color: #4c7047;
+    font-weight: 600;
+}
+
+span {
+    display: inline-block;
+    font-family: "Poppins";
+    font-weight: 400;
+    color: black;
+    font-size: 1rem;
+    /* pointer-event: none; */
+    transition: transform 0.1s linear;
+}
+
+.cursor {
+    pointer-events: none;
+    position: fixed;
+    padding: 0.3rem;
+    background-color: transparent;
+    border: 1px solid #4c7047;
+    border-radius: 50%;
+    /* mix-blend-mode: difference; */
+    transition: transform 0.3s ease;
+}
+
+.hover-this:hover ~ .cursor {
+    transform: translate(-50%, -50%) scale(5);
+}
+
+@media (min-width: 900px) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 900px) {
+    nav {
+        top: 30%;
+    }
+
+    .hover-this {
+        width: 100%;
+        padding: 20px 0;
+        display: inline-block;
+    }
+}

@@ -1,25 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
+import HomeScreen from "./screens/home-screen";
+import ProjectScreen from "./screens/project-screen";
+import { HomeScreenRoute, ProjectScreenRoute } from "./util/navigator";
 
+function addCursorEvents() {
+    const cursor = document.querySelector(".cursor");
+    const link = document.querySelectorAll("nav > .hover-this");
+
+    const animateit = function (e) {
+        const span = this.querySelector("span");
+        const { offsetX: x, offsetY: y } = e,
+            { offsetWidth: width, offsetHeight: height } = this,
+            move = 25,
+            xMove = (x / width) * (move * 2) - move,
+            yMove = (y / height) * (move * 2) - move;
+
+        span.style.transform = `translate(${xMove}px, ${yMove}px)`;
+
+        if (e.type === "mouseleave") span.style.transform = "";
+    };
+
+    const editCursor = (e) => {
+        const { clientX: x, clientY: y } = e;
+        cursor.style.left = x + "px";
+        cursor.style.top = y + "px";
+    };
+
+    link.forEach((b) => b.addEventListener("mousemove", animateit));
+    link.forEach((b) => b.addEventListener("mouseleave", animateit));
+    window.addEventListener("mousemove", editCursor);
+}
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    useEffect(() => {
+        addCursorEvents();
+    }, []);
+    return (
+        <div className="App">
+            <Router>
+                <Routes>
+                    <Route path={HomeScreenRoute} element={<HomeScreen />} />
+                    <Route
+                        path={ProjectScreenRoute}
+                        element={<ProjectScreen />}
+                    />
+                </Routes>
+            </Router>
+        </div>
+    );
 }
 
 export default App;

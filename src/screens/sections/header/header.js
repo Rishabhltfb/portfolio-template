@@ -1,36 +1,49 @@
 import "./header.css";
 import Spacer from "../../../common/spacer";
-import heroIllustration from "../../../assets/illustrations/hero.png";
+// import heroIllustration from "../../../assets/illustrations/hero.png";
 import CustomBttn from "../../../common/button";
+import AppStrings from "../../../util/strings";
+import AppAssets from "../../../util/assets";
 
 const HeaderSection = () => {
     return (
         <div id="header-section" className="section">
             <div id="header-content-wrapper">
                 <div id="header-content-wrap-1" className="col">
-                    <span className="hero-heading">Hi, I'm Deeva Gupta</span>
-                    <span className="hero-heading">UI/UX Designer! 👋🏼</span>
-                    <Spacer height="3vh" />
-                    <span className="body-text-1">
-                        I utilize my user research skills to understand people's
-                        behaviors and use that to deliver impactful solutions.
+                    <span className="intro-text">{AppStrings.nameString}</span>
+                    <span className="hero-text">
+                        {AppStrings.professionString}
                     </span>
+                    <Spacer height="3vh" />
+
                     <Spacer height="4vh" />
                     <CustomBttn
-                        text={"Click Here for Resume"}
-                        color={"rgba(76, 112, 71, 1)"}
+                        text={AppStrings.aboutMeString}
                         onClick={() => {
-                            console.log("Bttn Clicked");
+                            var ele = document.getElementById("about-section");
+                            window.scrollTo(ele.offsetLeft, ele.offsetTop);
                         }}
                     />
                 </div>
-                <Spacer width={"10%"} />
-                <div id="header-content-wrap-2">
+
+                <div id="header-content-wrap-2" className="col">
                     <img
                         id="hero-illustration"
-                        src={heroIllustration}
+                        src={AppAssets.heroIllustration}
                         alt="hero-illustration"
                     />
+                </div>
+                <div id="header-content-wrap-3" className="col">
+                    <div id="para-wrapper" className="col">
+                        <img
+                            src={AppAssets.flowerImg}
+                            alt="hero-illustration"
+                        />
+                        <p className="para-text" id="passion-string">
+                            {AppStrings.passionString}
+                        </p>
+                        <Spacer height={"10vh"} />
+                    </div>
                 </div>
             </div>
         </div>

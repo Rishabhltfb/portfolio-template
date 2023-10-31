@@ -1,7 +1,7 @@
 #header-section {
-    height: 80vh;
-    width: 100%;
-    /* background-color: yellow; */
+    height: 95vh;
+    background-color: var(--bg-shade-2);
+    padding: 0 var(--section-horizontal);
 }
 
 #header-content-wrapper {
@@ -9,23 +9,40 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    /* background-color: yellow; */
 }
 
 #header-content-wrap-1 {
     text-align: left;
     align-items: start;
     height: 100%;
-    width: 40%;
+    width: 35%;
+    /* background-color: aqua; */
 }
 #header-content-wrap-2 {
     text-align: left;
+    align-items: flex-end;
+    /* background-color: red; */
+    width: 40%;
+    height: 100%;
+}
+#header-content-wrap-3 {
+    text-align: left;
     align-items: start;
     /* background-color: red; */
-    width: 50%;
+    font-weight: 400;
+    width: 25%;
     height: 100%;
+    /* background-color: aqua; */
+    justify-content: end;
 }
 
 #hero-illustration {
     max-width: 100%;
     max-height: 100%;
+}
+
+#passion-string {
+    text-align: justify;
+    color: var(--grey-text-color);
 }

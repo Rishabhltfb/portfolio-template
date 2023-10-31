@@ -3,7 +3,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import HomeScreen from "./screens/home-screen";
 import ProjectScreen from "./screens/project-screen";
-import { HomeScreenRoute, ProjectScreenRoute } from "./util/navigator";
+import AppRoutes, {
+    HomeScreenRoute,
+    ProjectScreenRoute,
+} from "./util/navigator";
 
 function addCursorEvents() {
     const cursor = document.querySelector(".cursor");
@@ -40,9 +43,12 @@ function App() {
         <div className="App">
             <Router>
                 <Routes>
-                    <Route path={HomeScreenRoute} element={<HomeScreen />} />
                     <Route
-                        path={ProjectScreenRoute}
+                        path={AppRoutes.HomeScreenRoute}
+                        element={<HomeScreen />}
+                    />
+                    <Route
+                        path={AppRoutes.ProjectScreenRoute}
                         element={<ProjectScreen />}
                     />
                 </Routes>

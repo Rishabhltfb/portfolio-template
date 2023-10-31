@@ -3,9 +3,15 @@ const CustomBttn = (props) => {
         backgroundColor: props.bgColor ?? "transparent",
         color: props.color ?? undefined,
     };
+    var textStyle = {
+        color: props.color ?? undefined,
+    };
+
     return (
         <div onClick={props.onClick} className="bttn" style={spacerStyle}>
-            <p className="bttn-text">{props.text}</p>
+            <p className="bttn-text" style={textStyle}>
+                {props.text}
+            </p>
         </div>
     );
 };

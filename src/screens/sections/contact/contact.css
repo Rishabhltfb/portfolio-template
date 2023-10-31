@@ -21,3 +21,6 @@
 #contact-body-wrap {
     width: 40%;
 }
+#footer-description-text {
+    color: var(--grey-text-color);
+}

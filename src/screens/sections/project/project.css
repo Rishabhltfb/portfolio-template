@@ -1,4 +1,11 @@
 #project-section {
-    width: 100%;
-    /* background-color: bisque; */
+    background-color: var(--bg-shade-2);
+}
+
+.project-row {
+    /* justify-content: space-between; */
+}
+
+#projects-col {
+    padding: 5vh 0;
 }

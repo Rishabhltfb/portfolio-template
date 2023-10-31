@@ -4,42 +4,32 @@ import "./contact.css";
 import instaIcon from "../../../assets/icons/insta.png";
 import behanceIcon from "../../../assets/icons/behance.png";
 import linkedinIcon from "../../../assets/icons/linkedin.png";
+import AppStrings from "./../../../util/strings";
+import SectionHeading from "./../../../common/section-heading";
+import AppColors from "../../../util/colors";
 
 const ContactSection = () => {
     return (
         <div id="contact-section" className="section">
             <div id="contact-col">
-                <div className="row">
-                    <span className="dancing-text">Schedule a Call</span>
-                </div>
-                <div id="contact-header-row">
-                    <Spacer
-                        height="2px"
-                        width="30%"
-                        bg={"rgba(76, 112, 71, 0.4)"}
-                    />
-                    <span className="heading">Let’s talk</span>
-                    <Spacer
-                        height="2px"
-                        width="30%"
-                        bg={"rgba(76, 112, 71, 0.4)"}
-                    />
-                </div>
+                <SectionHeading
+                    preHeaderText={AppStrings.contactString}
+                    headerText={AppStrings.talkString}
+                />
                 <Spacer height={"4vh"} />
                 <div id="contact-body-wrap">
-                    <span className="body-text-1">
-                        I’m very approachable and would love to speak to you.
-                        Feel free to call, send me an email .{" "}
-                    </span>
+                    <p className="para-text" id="footer-description-text">
+                        {AppStrings.footerDescriptionString}
+                    </p>
                 </div>
                 <Spacer height={"4vh"} />
                 <div className="row">
-                    <CustomBttn text={"Call me"} />
+                    <CustomBttn text={AppStrings.callCtaString} />
                     <Spacer width="5vh" />
                     <CustomBttn
-                        bgColor={"rgba(76, 112, 71, 1)"}
-                        color={"white"}
-                        text={"Send Message"}
+                        bgColor={AppColors.goldColor}
+                        color={"#000"}
+                        text={AppStrings.messageCtaString}
                     />
                 </div>
                 <Spacer height={"8vh"} />

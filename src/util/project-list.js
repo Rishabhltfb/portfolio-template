@@ -1,28 +1,28 @@
-import project1 from "../assets/illustrations/about.png";
+import AppAssets from "./assets";
 
 export const projectList = [
     {
-        title: "Sketchnote",
+        title: "Vegapay",
         description:
             "As a UI/UX designer, my passion lies in creating seamless UI.",
-        img: project1,
-    },
-    {
-        title: "Hobby Tribe",
-        description:
-            "As a UI/UX designer, my passion lies in creating seamless UI.",
-        img: project1,
+        img: AppAssets.project1,
     },
     {
         title: "Sketchnote",
         description:
             "As a UI/UX designer, my passion lies in creating seamless UI.",
-        img: project1,
+        img: AppAssets.project2,
     },
     {
-        title: "Sketchnote",
+        title: "Wishup",
         description:
             "As a UI/UX designer, my passion lies in creating seamless UI.",
-        img: project1,
+        img: AppAssets.project3,
+    },
+    {
+        title: "Elevare",
+        description:
+            "As a UI/UX designer, my passion lies in creating seamless UI.",
+        img: AppAssets.project4,
     },
 ];

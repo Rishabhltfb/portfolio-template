@@ -1,2 +1,4 @@
-export const HomeScreenRoute = "/";
-export const ProjectScreenRoute = "/project";
+export default class AppRoutes {
+    static HomeScreenRoute = "/";
+    static ProjectScreenRoute = "/project";
+}

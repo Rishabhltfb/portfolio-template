@@ -1,7 +1,7 @@
 // icons imports
-import behanceIcon from "./../assets/icons/behance.png";
-import instaIcon from "./../assets/icons/insta.png";
-import linkedinIcon from "./../assets/icons/linkedin.png";
+import behanceIcon from "./../assets/icons/behance.svg";
+import instaIcon from "./../assets/icons/insta.svg";
+import linkedinIcon from "./../assets/icons/linkedin.svg";
 import flowerImg from "./../assets/icons/flower.svg";
 import logo from "./../assets/icons/logo.svg";
 

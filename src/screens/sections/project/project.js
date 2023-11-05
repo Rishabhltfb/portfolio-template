@@ -1,31 +1,49 @@
+import { useNavigate } from "react-router-dom";
 import CustomBttn from "../../../common/button";
 import ProjectComponent from "../../../common/project-component";
 import SectionHeading from "../../../common/section-heading";
 import Spacer from "../../../common/spacer";
+import HelperFunctions from "../../../util/helper-functions";
 import { projectList } from "../../../util/project-list";
 import AppStrings from "../../../util/strings";
 import "./project.css";
+import AppRoutes from "../../../util/navigator";
+import AppConstants from "../../../util/constants";
+import AppColors from "../../../util/colors";
 
 const ProjectSection = () => {
+    const isMobile = HelperFunctions.isMobile();
+    const navigate = useNavigate();
+
+    function navigateToProject(index) {
+        navigate(AppRoutes.ProjectScreenRoute);
+    }
+
     function getProjects() {
         const elements = [];
         for (let i = 0; i < projectList.length; i += 2) {
             elements.push(
-                <div className="col">
-                    <div className="row">
+                <div key={`project-${i}`} className="col">
+                    <div className="inverted-row">
                         <ProjectComponent
                             heading={projectList[i].title}
                             description={projectList[i].description}
                             img={projectList[i].img}
+                            onTap={() => navigateToProject(i)}
                         />
-                        <Spacer width={"2vw"} />
+                        {isMobile ? (
+                            <Spacer height={"5vw"} />
+                        ) : (
+                            <Spacer width={"2vw"} />
+                        )}
                         <ProjectComponent
                             heading={projectList[i + 1].title}
                             description={projectList[i + 1].description}
                             img={projectList[i + 1].img}
+                            onTap={() => navigateToProject(i + 1)}
                         />
                     </div>
-                    <Spacer height={"2vw"} />
+                    <Spacer height={isMobile ? "5vw" : "2vw"} />
                 </div>
             );
         }
@@ -36,6 +54,7 @@ const ProjectSection = () => {
                     heading={projectList[lastIndex].title}
                     description={projectList[lastIndex].description}
                     img={projectList[lastIndex].img}
+                    onTap={() => navigateToProject(lastIndex)}
                 />
             </div>;
         }
@@ -52,8 +71,11 @@ const ProjectSection = () => {
             </div>
             <CustomBttn
                 text={AppStrings.moreWorkString}
+                hoverBgColor={AppColors.goldColor}
+                hoverTextColor={AppColors.black}
+                color={AppColors.white}
                 onClick={() => {
-                    console.log("Bttn Clicked");
+                    HelperFunctions.openUrl(AppConstants.instaLink);
                 }}
             />
         </div>

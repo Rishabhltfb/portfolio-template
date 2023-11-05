@@ -1,7 +1,6 @@
 #contact-section {
     width: 100%;
     text-align: center;
-    /* background-color: grey; */
 }
 #contact-col {
     width: 100%;
@@ -23,4 +22,43 @@
 }
 #footer-description-text {
     color: var(--grey-text-color);
+}
+
+.contact-icon {
+    height: 1.5vw;
+    width: 1.5vw;
+}
+
+.contact-icon:hover {
+}
+
+@media screen and (max-width: 600px) and (orientation: portrait) {
+    #contact-section {
+        width: auto;
+    }
+    #contact-col {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #contact-header-row {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #contact-body-wrap {
+        width: 92%;
+    }
+    #footer-description-text {
+        color: var(--grey-text-color);
+    }
+    .contact-icon {
+        height: 5vw;
+        width: 5vw;
+    }
 }

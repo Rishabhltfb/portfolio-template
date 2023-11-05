@@ -3,27 +3,33 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import HomeScreen from "./screens/home-screen";
 import ProjectScreen from "./screens/project-screen";
-import AppRoutes, {
-    HomeScreenRoute,
-    ProjectScreenRoute,
-} from "./util/navigator";
+import AppRoutes from "./util/navigator";
 
 function addCursorEvents() {
     const cursor = document.querySelector(".cursor");
-    const link = document.querySelectorAll("nav > .hover-this");
+    const hoverElement = document.querySelectorAll(".hover-this");
 
     const animateit = function (e) {
-        const span = this.querySelector("span");
-        const { offsetX: x, offsetY: y } = e,
-            { offsetWidth: width, offsetHeight: height } = this,
-            move = 25,
-            xMove = (x / width) * (move * 2) - move,
-            yMove = (y / height) * (move * 2) - move;
+        const span = this.querySelector(".hover-text");
+        if (span) {
+            const { offsetX: x, offsetY: y } = e,
+                { offsetWidth: width, offsetHeight: height } = this,
+                move = 25,
+                xMove = (x / width) * (move * 2) - move,
+                yMove = (y / height) * (move * 2) - move;
 
-        span.style.transform = `translate(${xMove}px, ${yMove}px)`;
+            span.style.transform = `translate(${xMove}px, ${yMove}px)`;
 
-        if (e.type === "mouseleave") span.style.transform = "";
+            if (e.type === "mouseleave") span.style.transform = "";
+        }
     };
+
+    function resetHover(e) {
+        const spanElements = document.querySelectorAll(".hover-text");
+        spanElements.forEach((element) => {
+            element.style.transform = "";
+        });
+    }
 
     const editCursor = (e) => {
         const { clientX: x, clientY: y } = e;
@@ -31,16 +37,28 @@ function addCursorEvents() {
         cursor.style.top = y + "px";
     };
 
-    link.forEach((b) => b.addEventListener("mousemove", animateit));
-    link.forEach((b) => b.addEventListener("mouseleave", animateit));
+    hoverElement.forEach((element) => {
+        element.addEventListener("mouseover", () => {
+            cursor.style.transform = "translate(-50%, -50%) scale(5)";
+        });
+
+        element.addEventListener("mouseout", () => {
+            cursor.style.transform = "translate(0%, 0%) scale(1)";
+            resetHover(element);
+        });
+        element.addEventListener("mousemove", animateit);
+    });
+
     window.addEventListener("mousemove", editCursor);
 }
+
 function App() {
     useEffect(() => {
         addCursorEvents();
     }, []);
     return (
         <div className="App">
+            <div className="cursor" />
             <Router>
                 <Routes>
                     <Route

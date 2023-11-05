@@ -1,5 +1,5 @@
 #about-section {
-    height: 88vh;
+    min-height: 88vh;
     justify-content: space-between;
 }
 
@@ -20,4 +20,32 @@
 #intro-text {
     font-weight: 500;
     color: var(--grey-text-color);
+}
+
+@media screen and (max-width: 600px) and (orientation: portrait) {
+    #about-section {
+        min-height: auto;
+        justify-content: space-between;
+        padding: 3vh 0;
+    }
+
+    #about-section-wrap {
+        justify-content: space-between;
+        width: 90%;
+        padding: 4vh 0;
+    }
+
+    #about-content-wrap {
+        width: 100%;
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    #uiux-header {
+        font-weight: 600;
+    }
+    #intro-text {
+        font-weight: 500;
+        color: var(--grey-text-color);
+    }
 }

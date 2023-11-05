@@ -19,10 +19,14 @@ export default class AppStrings {
     static portfolioString = `PORTFOLIO`;
     static workHeadingString = `SELECTED WORK`;
     static moreWorkString = `CHECK MORE WORKS`;
+    static viewString = `VIEW`;
     // Footer Section
     static contactString = `CONTACT`;
     static talkString = `LET’S TALK`;
     static footerDescriptionString = `I’m very approachable and would love to speak to you. Feel free to call, send me an email.`;
     static callCtaString = `CALL ME`;
     static messageCtaString = `SEND MESSAGE`;
+    // More Work Section
+    static projectString = `PROJECTS`;
+    static moreWorkString = `MORE WORK`;
 }

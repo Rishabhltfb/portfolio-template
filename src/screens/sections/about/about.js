@@ -6,15 +6,19 @@ import AppStrings from "./../../../util/strings";
 import CustomBttn from "../../../common/button";
 import AppAssets from "../../../util/assets";
 import DetailRow from "../../../common/detail-row";
+import HelperFunctions from "../../../util/helper-functions";
+import AppConstants from "../../../util/constants";
+import AppColors from "../../../util/colors";
 
 const AboutSection = () => {
+    const isMobile = HelperFunctions.isMobile();
     return (
         <div id="about-section" className="section col">
             <SectionHeading
                 headerText={AppStrings.aboutMeString}
                 preHeaderText={AppStrings.resumeString}
             />
-            <div className="row" id="about-section-wrap">
+            <div className="inverted-row" id="about-section-wrap">
                 <div className="col" id="about-content-wrap">
                     <p className="para-text" id="uiux-header">
                         {AppStrings.uiuxString}
@@ -44,6 +48,7 @@ const AboutSection = () => {
                         value={AppStrings.behanceString}
                     />
                 </div>
+                {isMobile && <Spacer height={"5vh"} />}
                 <div id="about-illustration-wrap">
                     <img
                         src={AppAssets.aboutIllustration}
@@ -53,8 +58,11 @@ const AboutSection = () => {
             </div>
             <CustomBttn
                 text={AppStrings.viewResumeString}
+                hoverBgColor={AppColors.goldColor}
+                hoverTextColor={AppColors.black}
+                color={AppColors.white}
                 onClick={() => {
-                    console.log("Bttn Clicked");
+                    HelperFunctions.openUrl(AppConstants.resumeLink);
                 }}
             />
         </div>

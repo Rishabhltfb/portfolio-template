@@ -1,7 +1,7 @@
 #header-section {
-    height: 95vh;
+    height: calc(95vh - 2rem);
     background-color: var(--bg-shade-2);
-    padding: 0 var(--section-horizontal);
+    padding: 0 5vw;
 }
 
 #header-content-wrapper {
@@ -9,7 +9,6 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    /* background-color: yellow; */
 }
 
 #header-content-wrap-1 {
@@ -17,12 +16,10 @@
     align-items: start;
     height: 100%;
     width: 35%;
-    /* background-color: aqua; */
 }
 #header-content-wrap-2 {
     text-align: left;
     align-items: flex-end;
-    /* background-color: red; */
     width: 40%;
     height: 100%;
 }
@@ -45,4 +42,38 @@
 #passion-string {
     text-align: justify;
     color: var(--grey-text-color);
+}
+
+@media screen and (max-width: 600px) and (orientation: portrait) {
+    #header-section {
+        height: auto;
+        padding: 5vh 5vw;
+    }
+    #header-content-wrapper {
+        height: auto;
+        width: 100%;
+        flex-direction: column;
+    }
+    #header-content-wrap-1 {
+        text-align: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+    #header-content-wrap-2 {
+        text-align: center;
+        align-items: flex-end;
+        width: 100%;
+        height: 100%;
+    }
+    #header-content-wrap-3 {
+        text-align: center;
+        align-items: center;
+        /* background-color: red; */
+        font-weight: 400;
+        width: 100%;
+        height: 100%;
+        /* background-color: aqua; */
+        justify-content: end;
+    }
 }

@@ -7,6 +7,10 @@
     padding: 1rem 3rem;
 }
 
+#logo-wrapper {
+    height: 5vh;
+}
+
 nav {
     width: 30%;
     /* margin: 0 auto; */
@@ -33,22 +37,13 @@ span {
     transition: transform 0.1s linear;
 }
 
-.cursor {
-    pointer-events: none;
-    position: fixed;
-    padding: 0.3rem;
-    background-color: transparent;
-    border: 1px solid var(--white-text-color);
-    border-radius: 50%;
-    /* mix-blend-mode: difference; */
-    transition: transform 0.3s ease;
+@media screen and (max-width: 600px) and (orientation: portrait) {
+    nav {
+        display: none;
+    }
 }
 
-.hover-this:hover ~ .cursor {
-    transform: translate(-50%, -50%) scale(5);
-}
-
-@media (min-width: 900px) {
+/* @media (min-width: 900px) {
     nav {
         display: flex;
         justify-content: space-between;
@@ -65,4 +60,4 @@ span {
         padding: 20px 0;
         display: inline-block;
     }
-}
+} */

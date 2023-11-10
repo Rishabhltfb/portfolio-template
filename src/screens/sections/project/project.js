@@ -16,6 +16,7 @@ const ProjectSection = () => {
     const navigate = useNavigate();
 
     function navigateToProject(index) {
+        localStorage.setItem(AppStrings.projectIndexKey, index);
         navigate(AppRoutes.ProjectScreenRoute);
     }
 

@@ -12,6 +12,7 @@ import aboutIllustration from "./../assets/illustrations/about.svg";
 // projects imports
 import project1 from "./../assets/illustrations/projects/project-1.png";
 import project2 from "./../assets/illustrations/projects/project-2.png";
+import project2Banner from "./../assets/illustrations/projects/project-2-banner.png";
 import project3 from "./../assets/illustrations/projects/project-3.png";
 import project4 from "./../assets/illustrations/projects/project-4.png";
 
@@ -32,4 +33,5 @@ export default class AppAssets {
     static project2 = project2;
     static project3 = project3;
     static project4 = project4;
+    static project2Banner = project2Banner;
 }

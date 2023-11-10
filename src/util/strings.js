@@ -20,6 +20,7 @@ export default class AppStrings {
     static workHeadingString = `SELECTED WORK`;
     static moreWorkString = `CHECK MORE WORKS`;
     static viewString = `VIEW`;
+    static projectIndexKey = `project-index`;
     // Footer Section
     static contactString = `CONTACT`;
     static talkString = `LET’S TALK`;
@@ -28,5 +29,8 @@ export default class AppStrings {
     static messageCtaString = `SEND MESSAGE`;
     // More Work Section
     static projectString = `PROJECTS`;
-    static moreWorkString = `MORE WORK`;
+    static moreWorkString = `CHECK MORE WORK`;
+    // NDA Text
+    static ndaText =
+        "Due to the non-disclosure agreement (NDA) that covers all my work at Hucentric for Sketchnote, I won’t be able to share specific details about the project. However, if you’re up for a chat, feel free to reach out to me at dee.vag78@gmail.com.";
 }

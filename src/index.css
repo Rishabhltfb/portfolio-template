@@ -153,13 +153,11 @@ img {
     z-index: 2;
 }
 
-/* .hover-this:hover + .cursor,
-.hover-this:hover ~ .cursor {
-    transform: translate(-50%, -50%) scale(5);
-} */
-/* .hover-this:hover ~ .cursor {
-    transform: translate(-50%, -50%) scale(5);
-} */
+.scroll-lock {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+}
 
 @media screen and (max-width: 600px) and (orientation: portrait) {
     /* Text styling */
@@ -194,5 +192,8 @@ img {
         align-items: center;
         flex-direction: row;
         width: 100%;
+    }
+    .cursor {
+        display: none;
     }
 }

@@ -1,13 +1,25 @@
-const SkillTag = (props) => {
-    var spacerStyle = {
-        backgroundColor: props.bgColor ?? "transparent",
-        color: props.color,
+import AppColors from "../util/colors";
+import Spacer from "./spacer";
+
+const Tag = (props) => {
+    const primaryText = props.primaryText;
+    const secondaryText = props.secondaryText;
+    var wrapperStyle = {
+        textAlign: "left",
+        alignItems: "flex-start",
+    };
+    var primaryTextStyle = {
+        color: AppColors.greyColor,
     };
     return (
-        <div className="tag" style={spacerStyle}>
-            <p className="tag-text">{props.text}</p>
+        <div className="col" style={wrapperStyle}>
+            <p className="standard-text" style={primaryTextStyle}>
+                {primaryText}
+            </p>
+            <Spacer height={"8px"} />
+            <p className="small-text">{secondaryText}</p>
         </div>
     );
 };
 
-export default SkillTag;
+export default Tag;

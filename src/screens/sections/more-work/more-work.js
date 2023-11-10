@@ -17,38 +17,23 @@ const MoreWorkSection = (props) => {
     const currIndex = props.index;
 
     function navigateToProject(index) {
+        localStorage.setItem(AppStrings.projectIndexKey, index);
         navigate(AppRoutes.ProjectScreenRoute);
-    }
-
-    function getNextProjectsIndex(currIndex) {
-        // TODO: function to get next 2 indexes
-        const lastIndex = projectList.length - 1;
-        const nextIndexes = [];
-        let i = currIndex + 1;
-        while (true) {
-            if (nextIndexes.length == 2) break;
-            if (i <= lastIndex && i != currIndex) {
-                nextIndexes.push(i);
-            }
-            i += 1;
-            if (i > lastIndex) {
-                i = 0;
-            }
-        }
-        return nextIndexes;
     }
 
     function getMoreWork() {
         const elements = [];
-        const nextIndexes = getNextProjectsIndex(currIndex); // will always have 2 indexes
+        const projectLength = projectList.length;
+        const firstIndex = (currIndex + 1) % projectLength;
+        const secondIndex = (currIndex + 2) % projectLength;
         elements.push(
             <div key={`more-work-${currIndex}`} className="col">
                 <div className="inverted-row">
                     <ProjectComponent
-                        heading={projectList[nextIndexes[0]].title}
-                        description={projectList[nextIndexes[0]].description}
-                        img={projectList[nextIndexes[0]].img}
-                        onTap={() => navigateToProject(nextIndexes[0])}
+                        heading={projectList[firstIndex].title}
+                        description={projectList[firstIndex].description}
+                        img={projectList[firstIndex].img}
+                        onTap={() => navigateToProject(firstIndex)}
                     />
                     {isMobile ? (
                         <Spacer height={"5vw"} />
@@ -56,10 +41,10 @@ const MoreWorkSection = (props) => {
                         <Spacer width={"2vw"} />
                     )}
                     <ProjectComponent
-                        heading={projectList[nextIndexes[1]].title}
-                        description={projectList[nextIndexes[1]].description}
-                        img={projectList[nextIndexes[1]].img}
-                        onTap={() => navigateToProject(nextIndexes[1])}
+                        heading={projectList[secondIndex].title}
+                        description={projectList[secondIndex].description}
+                        img={projectList[secondIndex].img}
+                        onTap={() => navigateToProject(secondIndex)}
                     />
                 </div>
             </div>

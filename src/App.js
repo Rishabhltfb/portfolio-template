@@ -98,7 +98,7 @@ function App() {
     }, []);
     return (
         <div className="App">
-            <div className="cursor" />
+            <div className="cursor"></div>
             <Router>
                 <Routes>
                     <Route

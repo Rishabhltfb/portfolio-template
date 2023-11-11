@@ -10,6 +10,7 @@ import HelperFunctions from "../../../util/helper-functions";
 import AppRoutes from "../../../util/navigator";
 import AppStrings from "../../../util/strings";
 import AppConstants from "../../../util/constants";
+import AppColors from "../../../util/colors";
 
 const MoreWorkSection = (props) => {
     const isMobile = HelperFunctions.isMobile();
@@ -18,7 +19,11 @@ const MoreWorkSection = (props) => {
 
     function navigateToProject(index) {
         localStorage.setItem(AppStrings.projectIndexKey, index);
-        navigate(AppRoutes.ProjectScreenRoute);
+        window.scrollTo({
+            top: 0,
+            behavior: "instant",
+        });
+        window.location.reload();
     }
 
     function getMoreWork() {
@@ -53,7 +58,11 @@ const MoreWorkSection = (props) => {
         return elements;
     }
     return (
-        <div id="more-work-section" className="section col">
+        <div
+            key={"more-work-" + currIndex}
+            id="more-work-section"
+            className="section col"
+        >
             <SectionHeading
                 preHeaderText={AppStrings.projectString}
                 headerText={AppStrings.moreWorkString}
@@ -63,6 +72,9 @@ const MoreWorkSection = (props) => {
             <Spacer height={"5vh"} />
             <CustomBttn
                 text={AppStrings.moreWorkString}
+                hoverBgColor={AppColors.goldColor}
+                hoverTextColor={AppColors.black}
+                color={AppColors.white}
                 onClick={() => {
                     HelperFunctions.openUrl(AppConstants.instaLink);
                 }}

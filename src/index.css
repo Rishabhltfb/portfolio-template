@@ -112,8 +112,8 @@ body {
     border: 1px solid var(--bttn-border-color);
     border-radius: 100px;
     padding: 16px 30px 16px 30px;
-    /* cursor: pointer; */
 }
+
 img {
     max-height: 100%;
     max-width: 100%;

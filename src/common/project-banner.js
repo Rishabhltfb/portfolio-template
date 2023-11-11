@@ -9,6 +9,7 @@ const ProjectBanner = (props) => {
     const project = projectList[index];
     var wrapperStyle = {
         textAlign: "left",
+        width: "100%",
     };
     var headingStyle = {
         fontWeight: "600",

@@ -1,6 +1,7 @@
 import ParaBlock from "../../../common/para-block";
 import ProjectBanner from "../../../common/project-banner";
 import Spacer from "../../../common/spacer";
+import AppAssets from "../../../util/assets";
 import AppColors from "../../../util/colors";
 import HelperFunctions from "../../../util/helper-functions";
 import { projectList } from "../../../util/project-list";
@@ -16,10 +17,10 @@ const ProjectDetail = (props) => {
         const elements = [];
         project.impact.forEach((impact, index) => {
             elements.push(
-                <div key={`impact-${index}`}>
+                <span key={"imapact-" + index}>
                     {impact}
                     <br />
-                </div>
+                </span>
             );
         });
         return elements;
@@ -47,8 +48,22 @@ const ProjectDetail = (props) => {
             >
                 {AppStrings.ndaText}
             </p>
-            <div className="invert-row">
-                <div></div>
+            <Spacer height={"8vh"} />
+            <div id="demo-project-wrapper-row" className="inverted-row">
+                <div id="demo-project-1">
+                    <img
+                        className="demo-project-img"
+                        src={projectList[projectIndex].demoImg1}
+                        alt="demo-project-1"
+                    />
+                </div>
+                <div id="demo-project-2">
+                    <img
+                        className="demo-project-img"
+                        src={projectList[projectIndex].demoImg2}
+                        alt="demo-project-1"
+                    />
+                </div>
             </div>
         </div>
     );

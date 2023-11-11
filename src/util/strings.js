@@ -8,7 +8,14 @@ export default class AppStrings {
     static resumeString = `RESUME`;
     static viewResumeString = `VIEW RESUME`;
     static uiuxString = `UI/UX Designer`;
-    static introString = `Hi, my name is Deeva Gupta and  I thrive on collaborating with users to iterate and enhance designs that align with business goals. My focus is on crafting immersive and visually stunning applications through user-centric design principles.`;
+    static introString = (
+        <p className="standard-text" id="intro-text">
+            Hi, my name is <strong>Deeva Gupta</strong> and I thrive on
+            collaborating with users to iterate and enhance designs that align
+            with business goals. My focus is on crafting immersive and visually
+            stunning applications through user-centric design principles.
+        </p>
+    );
     static phoneString = `+(91) 7895 462 142`;
     static emailString = `dee.vag78@gmail.com`;
     static linkedinString = `www.linkedin.com/in/deeva-gupta`;

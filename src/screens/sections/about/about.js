@@ -24,9 +24,7 @@ const AboutSection = () => {
                         {AppStrings.uiuxString}
                     </p>
                     <br />
-                    <p className="standard-text" id="intro-text">
-                        {AppStrings.introString}
-                    </p>
+                    {AppStrings.introString}
                     <br />
                     <br />
                     <DetailRow

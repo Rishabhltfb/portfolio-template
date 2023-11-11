@@ -10,6 +10,7 @@ const CustomBttn = (props) => {
     };
     var textStyle = {
         color: textColor,
+        fontWeight: isHover ? "bold" : undefined,
     };
     useEffect(() => {
         if (isHover) {

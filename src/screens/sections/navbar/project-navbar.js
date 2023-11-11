@@ -1,36 +1,16 @@
+import BackButton from "../../../common/back-button";
 import AppAssets from "../../../util/assets";
 import "./navbar.css";
 
-const Navbar = () => {
+const ProjectNavbar = () => {
     return (
         <div className="nav-wrapper">
+            <BackButton />
             <div id="logo-wrapper">
                 <img href="/" src={AppAssets.logo} alt="logo" />
             </div>
-            <nav className="hover-container">
-                <a href="#header-section" className="hover-this">
-                    <span className="nav-element standard-text hover-text">
-                        HOME
-                    </span>
-                </a>
-                <a href="#about-section" className="hover-this">
-                    <span className="nav-element standard-text hover-text">
-                        ABOUT
-                    </span>
-                </a>
-                <a href="#project-section" className="hover-this">
-                    <span className="nav-element standard-text hover-text">
-                        WORK
-                    </span>
-                </a>
-                <a href="#contact-section" className="hover-this">
-                    <span className="nav-element standard-text hover-text">
-                        CONTACT
-                    </span>
-                </a>
-            </nav>
         </div>
     );
 };
 
-export default Navbar;
+export default ProjectNavbar;

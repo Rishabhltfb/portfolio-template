@@ -57,6 +57,7 @@ const ProjectDetail = (props) => {
                         alt="demo-project-1"
                     />
                 </div>
+                {isMobile && <Spacer height={"3vh"} />}
                 <div id="demo-project-2">
                     <img
                         className="demo-project-img"

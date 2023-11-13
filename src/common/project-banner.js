@@ -1,4 +1,6 @@
+import AppAssets from "../util/assets";
 import AppColors from "../util/colors";
+import HelperFunctions from "../util/helper-functions";
 import { projectList } from "../util/project-list";
 import CustomLine from "./line";
 import Spacer from "./spacer";
@@ -7,6 +9,7 @@ import Tag from "./tag";
 const ProjectBanner = (props) => {
     const index = props.index;
     const project = projectList[index];
+    const isMobile = HelperFunctions.isMobile();
     var wrapperStyle = {
         textAlign: "left",
         width: "100%",
@@ -14,22 +17,26 @@ const ProjectBanner = (props) => {
     var headingStyle = {
         fontWeight: "600",
     };
-    var paraStyle = {
-        fontWeight: "400",
-        color: AppColors.greyColor,
+    var tagWrapper = {
+        height: "30vh",
+        justifyContent: "space-evenly",
     };
     return (
         <div style={wrapperStyle}>
             <div className="banner-wrapper">
                 <img
-                    src={project.bannerImg}
+                    src={isMobile ? project.mobileBanner : project.bannerImg}
                     alt={`${project.title}-banner-img`}
                 />
             </div>
             <Spacer height={"5vh"} />
-            <p className="header-text" style={headingStyle}>
-                {project.title}
-            </p>
+            <div style={{ display: "flex", justifyContent: "flex-start" }}>
+                <p className="header-text" style={headingStyle}>
+                    {project.title}
+                </p>
+                <Spacer width={"10px"} />
+                <img src={AppAssets.linkIcon} />
+            </div>
             <Spacer height={"5vh"} />
             <CustomLine
                 height={"2px"}
@@ -37,7 +44,7 @@ const ProjectBanner = (props) => {
                 color={"rgba(51,51,55,1)"}
             />
             <br />
-            <div className="inverted-row">
+            <div style={isMobile ? tagWrapper : {}} className="inverted-row">
                 <Tag primaryText={"Domain"} secondaryText={project.domain} />
                 <Tag primaryText={"Role"} secondaryText={project.role} />
                 <Tag

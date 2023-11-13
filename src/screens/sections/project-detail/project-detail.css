@@ -26,3 +26,29 @@
     overflow: hidden;
     object-fit: cover;
 }
+
+@media screen and (max-width: 600px) and (orientation: portrait) {
+    .project-detail {
+        padding: 8vh 5vw;
+        width: 90%;
+        background-color: var(--bg-shade-2);
+    }
+
+    #demo-project-wrapper-row {
+        height: auto;
+        justify-content: space-between;
+    }
+
+    #demo-project-1 {
+        height: 25vh;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #demo-project-2 {
+        height: 35vh;
+        width: 100%;
+        overflow: hidden;
+        object-fit: cover;
+    }
+}

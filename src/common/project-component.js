@@ -3,6 +3,7 @@ import HelperFunctions from "./../util/helper-functions";
 import AppStrings from "../util/strings";
 
 const ProjectComponent = (props) => {
+    const isDisable = props.isDisable;
     var wrapperStyle = {
         textAlign: "left",
         justifyContent: props.align,
@@ -12,13 +13,20 @@ const ProjectComponent = (props) => {
     return (
         <div
             // className="hover-this"
-            onClick={() => props.onTap()}
+            onClick={() => {
+                if (isDisable) return;
+                props.onTap();
+            }}
             style={wrapperStyle}
         >
             <img src={props.img} alt="project img" />
             <div className="project-tint">
                 <div className="project-view-circle">
-                    <p className="small-text">{AppStrings.viewString}</p>
+                    <p className="small-text">
+                        {isDisable
+                            ? AppStrings.progressString
+                            : AppStrings.viewString}
+                    </p>
                 </div>
             </div>
         </div>

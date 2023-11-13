@@ -14,6 +14,7 @@ import AppColors from "../../../util/colors";
 const ProjectSection = () => {
     const isMobile = HelperFunctions.isMobile();
     const navigate = useNavigate();
+    const disableIndex = 3;
 
     function navigateToProject(index) {
         localStorage.setItem(AppStrings.projectIndexKey, index);
@@ -30,6 +31,7 @@ const ProjectSection = () => {
                             heading={projectList[i].title}
                             description={projectList[i].description}
                             img={projectList[i].img}
+                            isDisable={disableIndex == i}
                             onTap={() => navigateToProject(i)}
                         />
                         {isMobile ? (
@@ -41,6 +43,7 @@ const ProjectSection = () => {
                             heading={projectList[i + 1].title}
                             description={projectList[i + 1].description}
                             img={projectList[i + 1].img}
+                            isDisable={disableIndex == i + 1}
                             onTap={() => navigateToProject(i + 1)}
                         />
                     </div>
@@ -55,6 +58,7 @@ const ProjectSection = () => {
                     heading={projectList[lastIndex].title}
                     description={projectList[lastIndex].description}
                     img={projectList[lastIndex].img}
+                    isDisable={disableIndex == lastIndex}
                     onTap={() => navigateToProject(lastIndex)}
                 />
             </div>;

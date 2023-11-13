@@ -4,7 +4,6 @@ import "./App.css";
 import HomeScreen from "./screens/home-screen";
 import ProjectScreen from "./screens/project-screen";
 import AppRoutes from "./util/navigator";
-import { useLocation } from "react-router-dom";
 
 function addCursorEvents() {
     const cursor = document.querySelector(".cursor");
@@ -37,6 +36,10 @@ function addCursorEvents() {
         cursor.style.left = x + "px";
         cursor.style.top = y + "px";
     };
+    const removeLoader = (e) => {
+        const preLoader = document.getElementById("pre-loader");
+        preLoader.style.display = "none";
+    };
 
     hoverElement.forEach((element) => {
         element.addEventListener("mouseover", () => {
@@ -51,54 +54,22 @@ function addCursorEvents() {
     });
 
     window.addEventListener("mousemove", editCursor);
+    window.addEventListener("load", removeLoader);
 }
 
 function App() {
-    // useEffect(() => {
-    //     const onPopState = () => {
-    //         // A route change has occurred
-    //         console.log("Route pop occured");
-    //     };
-    //     const onPushState = () => {
-    //         // A route change has occurred
-    //         console.log("Route push occured");
-    //     };
-
-    //     window.addEventListener("popstate", onPopState);
-    //     window.addEventListener("pushState", onPushState);
-
-    //     return () => {
-    //         window.removeEventListener("popstate", onPopState);
-    //         window.removeEventListener("pushState", onPushState);
-    //     };
-    // }, []);
-    // const location = useLocation();
-    // const previousLocation = useRef(null);
-    // useEffect(() => {
-    //     if (
-    //         previousLocation.current !== null &&
-    //         previousLocation.current.pathname !== location.pathname
-    //     ) {
-    //         // A route change has occurred
-    //     }
-
-    //     previousLocation.current = location;
-    // }, [location]);
     useEffect(() => {
         addCursorEvents();
-        // const unlisten = history.listen((location, action) => {
-        //     // location is the new location
-        //     // action is the action (PUSH, REPLACE, or POP)
-        //     console.log("Route changed to:", location.pathname);
-        // });
-        // // Clean up the listener when the component unmounts
-        // return () => {
-        //     unlisten();
-        // };
     }, []);
     return (
         <div className="App">
             <div className="cursor"></div>
+            <div id="pre-loader">
+                <div className="lds-ripple">
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
             <Router>
                 <Routes>
                     <Route

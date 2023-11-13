@@ -27,6 +27,7 @@ export default class AppStrings {
     static workHeadingString = `SELECTED WORK`;
     static moreWorkString = `CHECK MORE WORKS`;
     static viewString = `VIEW`;
+    static progressString = `IN PROGRESS`;
     static projectIndexKey = `project-index`;
     // Footer Section
     static contactString = `CONTACT`;

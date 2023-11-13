@@ -16,6 +16,7 @@ const MoreWorkSection = (props) => {
     const isMobile = HelperFunctions.isMobile();
     const navigate = useNavigate();
     const currIndex = props.index;
+    const disabelIndex = 3;
 
     function navigateToProject(index) {
         localStorage.setItem(AppStrings.projectIndexKey, index);
@@ -38,6 +39,7 @@ const MoreWorkSection = (props) => {
                         heading={projectList[firstIndex].title}
                         description={projectList[firstIndex].description}
                         img={projectList[firstIndex].img}
+                        isDisable={disabelIndex == firstIndex}
                         onTap={() => navigateToProject(firstIndex)}
                     />
                     {isMobile ? (
@@ -49,6 +51,7 @@ const MoreWorkSection = (props) => {
                         heading={projectList[secondIndex].title}
                         description={projectList[secondIndex].description}
                         img={projectList[secondIndex].img}
+                        isDisable={disabelIndex == secondIndex}
                         onTap={() => navigateToProject(secondIndex)}
                     />
                 </div>

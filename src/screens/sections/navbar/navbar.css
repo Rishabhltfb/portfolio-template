@@ -1,11 +1,13 @@
 .nav-wrapper {
     height: 5vh;
     display: flex;
-    position: relative;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 3rem;
-    /* width: 95%; */
+    position: sticky;
+    background-color: var(--bg-shade-1);
+    top: 0;
+    z-index: 5;
 }
 
 #logo-wrapper {
@@ -13,10 +15,11 @@
 }
 
 nav {
-    width: 30%;
+    width: 25%;
     display: flex;
     justify-content: space-between;
     text-align: center;
+    position: sticky;
 }
 
 .hover-this {

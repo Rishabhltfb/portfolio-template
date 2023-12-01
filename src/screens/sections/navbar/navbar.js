@@ -42,11 +42,6 @@ const Navbar = () => {
     function getDesktopNavbar() {
         return (
             <nav className="hover-container">
-                <a href="#header-section" className="hover-this">
-                    <span className="nav-element standard-text hover-text">
-                        HOME
-                    </span>
-                </a>
                 <a href="#about-section" className="hover-this">
                     <span className="nav-element standard-text hover-text">
                         ABOUT
@@ -68,9 +63,15 @@ const Navbar = () => {
 
     return (
         <div className="nav-wrapper">
-            <div id="logo-wrapper">
-                <img href="/" src={AppAssets.logo} alt="logo" />
-            </div>
+            <a href="#header-section">
+                <div id="logo-wrapper">
+                    <img
+                        className="hover-this"
+                        src={AppAssets.logo}
+                        alt="logo"
+                    />
+                </div>
+            </a>
             {getDesktopNavbar()}
             <div id="mobile-nav">
                 <div id="sidebar-wrapper" className="col">
@@ -95,7 +96,8 @@ const Navbar = () => {
 
                     <div className="row sidebar-icon-row">
                         <CircleIcon
-                            icon={AppAssets.instaIcon}
+                            lightIcon={AppAssets.instaIcon}
+                            darkIcon={AppAssets.instaDarkIcon}
                             alt={"insta icon"}
                             onTap={() =>
                                 HelperFunctions.openUrl(AppConstants.instaLink)
@@ -103,7 +105,8 @@ const Navbar = () => {
                         />
                         <Spacer width="3vw" />
                         <CircleIcon
-                            icon={AppAssets.linkedinIcon}
+                            lightIcon={AppAssets.linkedinIcon}
+                            darkIcon={AppAssets.linkedinDarkIcon}
                             alt={"linkedin icon"}
                             onTap={() =>
                                 HelperFunctions.openUrl(
@@ -113,7 +116,8 @@ const Navbar = () => {
                         />
                         <Spacer width="3vw" />
                         <CircleIcon
-                            icon={AppAssets.behanceIcon}
+                            lightIcon={AppAssets.behanceIcon}
+                            darkIcon={AppAssets.behanceDarkIcon}
                             alt={"behance icon"}
                             onTap={() =>
                                 HelperFunctions.openUrl(

@@ -2,6 +2,9 @@
 import behanceIcon from "./../assets/icons/behance.svg";
 import instaIcon from "./../assets/icons/insta.svg";
 import linkedinIcon from "./../assets/icons/linkedin.svg";
+import behanceDarkIcon from "./../assets/icons/behance-dark.svg";
+import instaDarkIcon from "./../assets/icons/insta-dark.svg";
+import linkedinDarkIcon from "./../assets/icons/linkedin-dark.svg";
 import flowerImg from "./../assets/icons/flower.svg";
 import logo from "./../assets/icons/logo.svg";
 import linkIcon from "./../assets/icons/link.svg";
@@ -24,7 +27,9 @@ import project2Demo1 from "./../assets/illustrations/projects/project-2-demo-1.p
 import project2Demo2 from "./../assets/illustrations/projects/project-2-demo-2.png";
 import project3Demo1 from "./../assets/illustrations/projects/project-3-demo-1.png";
 import project3Demo2 from "./../assets/illustrations/projects/project-3-demo-2.png";
-import project1MobileBanner from "./../assets/illustrations/projects/project-2-mobile-banner.png";
+import project1MobileBanner from "./../assets/illustrations/projects/project-1-mobile-banner.png";
+import project2MobileBanner from "./../assets/illustrations/projects/project-2-mobile-banner.png";
+import project3MobileBanner from "./../assets/illustrations/projects/project-3-mobile-banner.png";
 
 export default class AppAssets {
     // icons
@@ -32,6 +37,9 @@ export default class AppAssets {
     static linkedinIcon = linkedinIcon;
     static instaIcon = instaIcon;
     static behanceIcon = behanceIcon;
+    static linkedinDarkIcon = linkedinDarkIcon;
+    static instaDarkIcon = instaDarkIcon;
+    static behanceDarkIcon = behanceDarkIcon;
     static logo = logo;
     static linkIcon = linkIcon;
 
@@ -54,4 +62,6 @@ export default class AppAssets {
     static project3Demo1 = project3Demo1;
     static project3Demo2 = project3Demo2;
     static project1MobileBanner = project1MobileBanner;
+    static project2MobileBanner = project2MobileBanner;
+    static project3MobileBanner = project3MobileBanner;
 }

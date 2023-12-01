@@ -10,15 +10,7 @@ const BackButton = () => {
         window.location.reload();
     };
 
-    return (
-        <div onClick={handleGoBack}>
-            {" "}
-            <span role="img" aria-label="Back">
-                &#9664; {/* Unicode character for left arrow */}
-            </span>{" "}
-            Go Back
-        </div>
-    );
+    return <div onClick={handleGoBack}> Go Back</div>;
 };
 
 export default BackButton;

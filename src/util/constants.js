@@ -6,4 +6,5 @@ export default class AppConstants {
     static resumeLink = "https://bit.ly/deeva_resume";
     static email = "dee.vag78@gmail.com";
     static phoneNumber = "8057460671";
+    static preLoaderAutoRemoveTime = 1000 * 3; // 3 secs
 }

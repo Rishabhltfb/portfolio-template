@@ -53,7 +53,8 @@ const ContactSection = () => {
                 <Spacer height={"8vh"} />
                 <div className="row">
                     <CircleIcon
-                        icon={AppAssets.instaIcon}
+                        lightIcon={AppAssets.instaIcon}
+                        darkIcon={AppAssets.instaDarkIcon}
                         alt={"insta icon"}
                         onTap={() =>
                             HelperFunctions.openUrl(AppConstants.instaLink)
@@ -61,7 +62,8 @@ const ContactSection = () => {
                     />
                     <Spacer width="3vw" />
                     <CircleIcon
-                        icon={AppAssets.linkedinIcon}
+                        lightIcon={AppAssets.linkedinIcon}
+                        darkIcon={AppAssets.linkedinDarkIcon}
                         alt={"linkedin icon"}
                         onTap={() =>
                             HelperFunctions.openUrl(AppConstants.linkedinLink)
@@ -69,7 +71,8 @@ const ContactSection = () => {
                     />
                     <Spacer width="3vw" />
                     <CircleIcon
-                        icon={AppAssets.behanceIcon}
+                        lightIcon={AppAssets.behanceIcon}
+                        darkIcon={AppAssets.behanceDarkIcon}
                         alt={"behance icon"}
                         onTap={() =>
                             HelperFunctions.openUrl(AppConstants.behanceLink)

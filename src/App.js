@@ -1,9 +1,10 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import HomeScreen from "./screens/home-screen";
 import ProjectScreen from "./screens/project-screen";
 import AppRoutes from "./util/navigator";
+import AppConstants from "./util/constants";
 
 function addCursorEvents() {
     const cursor = document.querySelector(".cursor");
@@ -36,10 +37,6 @@ function addCursorEvents() {
         cursor.style.left = x + "px";
         cursor.style.top = y + "px";
     };
-    const removeLoader = (e) => {
-        const preLoader = document.getElementById("pre-loader");
-        preLoader.style.display = "none";
-    };
 
     hoverElement.forEach((element) => {
         element.addEventListener("mouseover", () => {
@@ -54,13 +51,32 @@ function addCursorEvents() {
     });
 
     window.addEventListener("mousemove", editCursor);
-    window.addEventListener("load", removeLoader);
 }
 
 function App() {
+    const removeLoader = () => {
+        const preLoader = document.getElementById("pre-loader");
+        if (preLoader) {
+            console.log("Removing loader");
+            preLoader.style.display = "none";
+        } else {
+            setTimeout(() => {
+                removeLoader();
+            }, 100);
+        }
+    };
+
+    window.addEventListener("load", removeLoader);
+    window.addEventListener("DOMContentLoaded", removeLoader);
+
     useEffect(() => {
+        setTimeout(() => {
+            // Automatically remove pre loader after (t) time
+            removeLoader();
+        }, AppConstants.preLoaderAutoRemoveTime);
         addCursorEvents();
     }, []);
+
     return (
         <div className="App">
             <div className="cursor"></div>

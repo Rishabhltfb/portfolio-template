@@ -3,6 +3,7 @@ import AppColors from "../util/colors";
 const ParaBlock = (props) => {
     const heading = props.heading;
     const paragraph = props.paragraph;
+    const headingClass = props.headingClass;
     var wrapperStyle = {
         textAlign: "left",
     };
@@ -12,10 +13,11 @@ const ParaBlock = (props) => {
     var paraStyle = {
         fontWeight: "400",
         color: AppColors.greyColor,
+        alignSelf: "stretch",
     };
     return (
         <div key={"para-block-" + heading} style={wrapperStyle}>
-            <p className="intro-text" style={headingStyle}>
+            <p className={headingClass} style={headingStyle}>
                 {heading}
             </p>
             <br />

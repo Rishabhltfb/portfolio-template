@@ -31,11 +31,19 @@ const ProjectBanner = (props) => {
             </div>
             <Spacer height={"5vh"} />
             <div style={{ display: "flex", justifyContent: "flex-start" }}>
-                <p className="header-text" style={headingStyle}>
+                <p
+                    onClick={() => HelperFunctions.openUrl(project.projectLink)}
+                    className="header-text hover-this"
+                    style={headingStyle}
+                >
                     {project.title}
                 </p>
                 <Spacer width={"10px"} />
-                <img src={AppAssets.linkIcon} />
+                <img
+                    className="hover-this"
+                    onClick={() => HelperFunctions.openUrl(project.projectLink)}
+                    src={AppAssets.linkIcon}
+                />
             </div>
             <Spacer height={"5vh"} />
             <CustomLine

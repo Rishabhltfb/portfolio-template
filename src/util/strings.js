@@ -38,7 +38,4 @@ export default class AppStrings {
     // More Work Section
     static projectString = `PROJECTS`;
     static moreWorkString = `CHECK MORE WORK`;
-    // NDA Text
-    static ndaText =
-        "Due to the non-disclosure agreement (NDA) that covers all my work at Hucentric for Sketchnote, I won’t be able to share specific details about the project. However, if you’re up for a chat, feel free to reach out to me at dee.vag78@gmail.com.";
 }

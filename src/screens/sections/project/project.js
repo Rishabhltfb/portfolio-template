@@ -10,6 +10,7 @@ import "./project.css";
 import AppRoutes from "../../../util/navigator";
 import AppConstants from "../../../util/constants";
 import AppColors from "../../../util/colors";
+import { useEffect, useState } from "react";
 
 const ProjectSection = () => {
     const isMobile = HelperFunctions.isMobile();
@@ -21,12 +22,32 @@ const ProjectSection = () => {
         navigate(AppRoutes.ProjectScreenRoute);
     }
 
+    const [scrollPos, setScrollPos] = useState(0);
+
+    useEffect(() => {
+        console.log("Test1");
+        const handleScroll = (e) => {
+            const scrollTop = e.target.scrollTop;
+            console.log("Test2", e.target);
+            setScrollPos(scrollTop);
+        };
+        const projectSection = document.getElementById("project-section");
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     function getProjects() {
         const elements = [];
-        for (let i = 0; i < projectList.length; i += 2) {
-            elements.push(
-                <div key={`project-${i}`} className="col">
-                    <div className="inverted-row">
+        for (let i = 0; i < projectList.length; i += 1) {
+            {
+                elements.push(
+                    <div
+                        key={`project-${i}`}
+                        style={{
+                            position: "absolute",
+                            transform: `translateX(${scrollPos * i}px)`,
+                        }}
+                    >
                         <ProjectComponent
                             heading={projectList[i].title}
                             description={projectList[i].description}
@@ -34,36 +55,16 @@ const ProjectSection = () => {
                             isDisable={disableIndex == i}
                             onTap={() => navigateToProject(i)}
                         />
-                        {isMobile ? (
-                            <Spacer height={"5vw"} />
-                        ) : (
-                            <Spacer width={"2vw"} />
-                        )}
-                        <ProjectComponent
-                            heading={projectList[i + 1].title}
-                            description={projectList[i + 1].description}
-                            img={projectList[i + 1].img}
-                            isDisable={disableIndex == i + 1}
-                            onTap={() => navigateToProject(i + 1)}
-                        />
+                        <Spacer width={"2vw"} />
                     </div>
-                    <Spacer height={isMobile ? "5vw" : "2vw"} />
-                </div>
-            );
+                );
+            }
         }
-        if (elements.length < projectList.length) {
-            const lastIndex = projectList.length - 1;
-            <div className="row project-row">
-                <ProjectComponent
-                    heading={projectList[lastIndex].title}
-                    description={projectList[lastIndex].description}
-                    img={projectList[lastIndex].img}
-                    isDisable={disableIndex == lastIndex}
-                    onTap={() => navigateToProject(lastIndex)}
-                />
-            </div>;
-        }
-        return elements;
+        return (
+            <div style={{ position: "relative" }} className="inverted-row">
+                {elements}
+            </div>
+        );
     }
     return (
         <div id="project-section" className="section col">

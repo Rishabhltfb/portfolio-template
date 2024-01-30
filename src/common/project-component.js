@@ -8,7 +8,7 @@ const ProjectComponent = (props) => {
         textAlign: "left",
         justifyContent: props.align,
         position: "relative",
-        width: HelperFunctions.isMobile() ? "90%" : "40%",
+        width: HelperFunctions.isMobile() ? "90vw" : "40vw",
     };
     return (
         <div
